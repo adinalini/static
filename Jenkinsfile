@@ -1,9 +1,10 @@
 pipeline {
   agent any
   stages {
+    
     stage('Lint HTML') {
       steps {
-        tidy -q -e *.html
+        tidy -q -e index.html
       }
     }
     
@@ -18,6 +19,7 @@ pipeline {
           '''
         }
       }
+      
     }
   }
 }
