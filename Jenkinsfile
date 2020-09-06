@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Upload to AWS') {
-      withAWS(region: 'eu-west-2' credentials: 'aws-static') {
+      withAWS(region: 'eu-west-2', credentials: 'aws-static') {
         steps {
         s3Upload(file:'index.html', bucket:'udacity-project-adi-3')
         sh 'echo "Hello World"'
